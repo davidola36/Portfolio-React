@@ -1,0 +1,42 @@
+$color-primary: #111111;
+
+$color-secondary: #ffffff;
+
+
+ 
+
+$shadow-primary: 4px 10px 15px rgba(0, 0, 0, 0.25);
+
+$banner-height: calc(100vh - 40px);
+
+/////////////////////////////////////////////////////// GRID
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-vertical-small: 6rem;
+$gutter-horizontal: 6rem; 
+
+
+////////////////////////////////////////////////// SCREEN WIDTHS
+$bp-largest: 75em; //1200px
+$bp-large: 68.75em; //1100
+$bp-medium: 56.25em; //900px
+$bp-small: 37.5em; //600px
+$bp-smallest: 31.5em; //500px
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+    @media only screen and (max-width:$bp-large) {
+        font-size: 50%; // 1rem == s8px
+    }
+} 
+
+body {
+    margin: 0;
+    // cursor: none;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    min-height: 100vh;
+} 

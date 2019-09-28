@@ -1,0 +1,27 @@
+.light-theme__color {
+    color: $color-primary !important;  
+}
+
+.light-theme__border {
+    border-color: $color-secondary !important;
+}
+
+.dark-theme__border {
+    border-color: $color-primary !important;
+}
+
+.light-theme__background {
+    background-color: $color-secondary !important;
+}
+
+.dark-theme__background {
+    background-color: $color-primary !important;
+}
+
+.light-theme__filter{
+    filter:invert(0%) sepia(100%) saturate(7500%) hue-rotate(282deg) brightness(88%) contrast(112%);
+}
+
+.transition {
+    transition: all 1s ease-in; 
+}

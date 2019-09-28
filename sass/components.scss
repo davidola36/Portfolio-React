@@ -1,0 +1,143 @@
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $color-secondary;
+    border-radius: 50%;
+    position: absolute;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    animation: cursorAnim 1s infinite alternate;
+}
+
+.cursor::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 8px solid gray;
+    border-radius: 50%;
+    opacity: .5;
+    top: -8px;
+    left: -8px;
+}
+
+.expand {
+    animation: cursorAnim2 .5s forwards;
+    border: 1px solid red;
+}
+
+@keyframes cursorAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(.7);
+    }
+}
+
+@keyframes cursorAnim2 {
+    0%{
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(3);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+
+.btn-primary {
+    color: $color-secondary;
+    padding: 2rem 6rem;
+    background: transparent;
+    border-radius: 4rem;
+    border: 1px solid;
+    font-family: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.features {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+
+    &-single {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+    }
+
+    &-img{
+        height: 3rem;
+        margin-right: 2rem;
+    }
+
+    &-text {
+        letter-spacing: 1px;
+    }
+}
+
+.social {
+    &-img{
+        display: inline-block;
+        margin-right: 2rem;
+        height: 3rem;
+    }
+}
+
+
+.mode {
+    &-input {
+        display: none;
+    }
+
+    &-label {
+        font-size: 2.4rem;
+        cursor: pointer;
+        position: relative;
+        padding-left: 4.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &-btn {
+        height: 2rem;
+        width: 4rem;
+        border: 1px solid $color-secondary;
+        border-radius: 30px;
+        margin-left: 1rem;
+        position: relative;
+        transition: all 1s ease-in;
+    }
+
+
+    &-btn.lightmode {
+        border-color: $color-primary;
+    }
+
+    &-btn::after {
+        content: "";
+        display: block;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        background-color: $color-secondary;
+        transition: left 2s, background-color 1s ease-in;
+    }
+
+    &-btn.lightmode::after {
+        background-color: $color-primary;
+    }
+
+
+    &-input:checked ~ &-label &-btn::after {
+        left: 75%;
+    }
+}

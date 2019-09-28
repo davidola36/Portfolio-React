@@ -1,0 +1,83 @@
+.page {
+    max-width: 100rem;
+    margin: 0 auto;
+    color: $color-secondary;
+    height: 100vh;
+    position: relative;
+
+}
+
+.background-image {
+    background-image: url('/img/david.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right 10rem;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    font-size: 2.8rem;
+    justify-content: space-between;
+    padding-top: 2rem;
+
+    &-logo {
+        height: 6rem;
+        display: inline-block;
+    }
+
+    &-link:link,
+    &-link{ 
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: relative;
+        color: inherit;
+        text-decoration: none;
+    }
+
+   
+
+    &-link::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        border: 1px solid $color-secondary;
+        bottom: -1rem;
+        left: 0;
+        width: 100%;
+        transform: scaleX(0);
+        transition: transform .4s cubic-bezier(1,0,0,1) .2s,
+                    border 1s ease-in;
+    }
+
+    &-link.lightmode::after {
+        border-color: $color-primary;
+    }
+
+    &-link.active::after,
+    &-link:hover::after {
+        transform: scaleX(1);
+    }
+}
+
+
+.main  {
+    &-content {
+        width: 70rem;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
